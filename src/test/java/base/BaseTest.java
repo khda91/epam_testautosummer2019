@@ -1,5 +1,6 @@
 package base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,9 +17,11 @@ public class BaseTest {
     public void setUpDriverPath() {
 //        System.setProperty("webdriver.chrome.driver",
 //                this.getClass().getClassLoader().getResource("driver/chromedriver.exe").getPath());
-        System.setProperty("webdriver.chrome.driver",
-                Paths.get("src/test/resources/driver/chromedriver.exe")
-                        .toAbsolutePath().toString());
+//        System.setProperty("webdriver.chrome.driver",
+//                Paths.get("src/test/resources/driver/chromedriver.exe")
+//                        .toAbsolutePath().toString());
+
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeMethod
