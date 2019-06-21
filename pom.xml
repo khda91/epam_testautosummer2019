@@ -38,7 +38,7 @@
         </profile>
 
         <profile>
-            <id>test</id>
+            <id>test-selenium</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
