@@ -1,11 +1,9 @@
-package lesson3.voids;
+package lesson5;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 public class HomePage extends BasePage {
 
@@ -24,6 +22,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    @Step("Login as user")
     public void login(String userName, String password) {
         userIcon.click();
         loginNameTextField.sendKeys(userName);
