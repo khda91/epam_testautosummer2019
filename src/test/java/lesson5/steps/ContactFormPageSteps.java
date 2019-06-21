@@ -5,8 +5,11 @@ import io.qameta.allure.testng.TestInstanceParameter;
 import lesson3.enums.LeftSideMenu;
 import lesson5.ContactFormPage;
 import lesson5.TestProvider;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Parameters;
+
+import static org.testng.Assert.assertEquals;
 
 public class ContactFormPageSteps {
 
@@ -20,7 +23,7 @@ public class ContactFormPageSteps {
         contactFormPage = new ContactFormPage(driver);
     }
 
-    @Step("Natigate to Contact Form page")
+    @Step("Navigate to Contact Form page")
     public void goToContactFormPage() {
         contactFormPage.clickLeftSideMenu(LeftSideMenu.CONTACT_FORM);
     }
@@ -29,5 +32,11 @@ public class ContactFormPageSteps {
     public void fillContactFormData(String gender, String lastName) {
         contactFormPage.selectGender(gender);
         contactFormPage.setTextLastNameTextField(lastName);
+    }
+
+    @Step("Check user name {0}")
+    public void checkUserName(String userName) {
+        assertEquals(driver.findElement(By.id("user-name"))
+                .getText(), userName);
     }
 }
