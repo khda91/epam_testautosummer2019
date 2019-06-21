@@ -36,6 +36,16 @@
                 <suite.xml>src/test/resources/test.xml</suite.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/testSelenium.xml</suite.xml>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
