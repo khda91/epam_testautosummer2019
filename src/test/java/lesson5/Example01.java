@@ -4,8 +4,10 @@ import base.BaseTest;
 import lesson5.steps.ContactFormPageSteps;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(AllureAttachmentListener.class)
 public class Example01 extends BaseTest {
 
     ContactFormPageSteps contactFormPageSteps;
