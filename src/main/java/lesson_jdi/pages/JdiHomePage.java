@@ -2,6 +2,7 @@ package lesson_jdi.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
+import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.Label;
 import lesson_jdi.entities.Users;
 import lesson_jdi.forms.JdiLoginForm;
@@ -14,7 +15,11 @@ public class JdiHomePage extends WebPage {
     @Css("#user-name")
     private Label userName;
 
+    @Css(".profile-photo")
+    private Button profilePhoto;
+
     public void login(Users user) {
+        profilePhoto.click();
         loginForm.login(user);
     }
 
